@@ -1,1 +1,284 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --primary: rgb(177, 142, 120);
+    --primary-darker: rgb(139, 109, 89);
+    --primary-darkest: rgb(56, 39, 23);
+    --border: rgb(102,79,58);
+    --text: rgb(243, 225, 213);
+}
+@keyframes subtext{
+    100% {width: 20vw;}
+}
+@keyframes nav {
+    100%{width: 40vw; height: 7.5vh; border-radius: 50px;}
+}
+@keyframes text {
+    100%{opacity: 1;}
+}
+@keyframes presentation {
+    0%{transform: translate(-5000px, 0px);}
+}
+@keyframes data {
+    0%{transform: translate(-5000px, 0px); visibility: hidden;}
+    100%{transform: translate(0px, 0px); visibility: visible;}
+}
+@keyframes datarigth {
+    0%{transform: translate(5000px, 0px); visibility: hidden;}
+    100%{transform: translate(0px, 0px); visibility: visible;}
+}
+@keyframes redes {
+    100%{opacity: 1;}
+}
+html {
+    margin: 0px;
+    min-height: 100vh;
+    width: 100%;
+    height: auto;
+    background-image: url(assets/images/fondo.png);
+    background-size: cover;
+    background-position: fixed;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body {
+    margin: 0px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 0px 10px 5px white;
+    background-color: var(--primary);
+    border: 5px solid var(--border);
+    border-radius: 100px;
+    animation-delay: 1s;
+    animation-name: nav;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 25%;
+    margin: 0px 2.5%;
+    transition: background-color .5s;
+}
+nav a:hover {
+    background-color: var(--primary-darker);
+}
+nav a p{
+    opacity: 0;
+    animation-name: text;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    color: var(--text);
+    font-size: 1.5vw;
+    text-decoration: underline white;
+}
+.divnav{
+    display: flex;
+    position: fixed;
+    top: 1.5vh;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;
+}
+#presentationcontainer {
+    padding-top: 15vh;
+}
+#presentation {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 78vh;
+    background-color: var(--primary);
+    border: 5px solid var(--border);
+    border-radius: 10px;
+    animation-name: presentation;
+    animation-duration: 2.5s;
+    overflow: hidden;
+}
+#foto{
+    position: relative;
+    background-image: url(assets/images/IMG_20210505_145456.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 45%;
+    height: 100%;
+    border-radius: 7.5px;
+}
+#foto:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0) 80%,rgb(177, 142, 120)) 20%;
+    z-index: 0;
+    opacity: 1;
+}
+#presentationtext{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 55%;
+    height: 100%;
+}
+#presentationtext h1,p{
+    text-align: center;
+    color: var(--text)
+}
+#presentationtext p{
+    width: 80%;
+    font-size: 1.5vw;
+    padding: 0px 2.5%;
+    margin-top: 20%;
+}
+#presentationtext h1{
+    font-size: 1.5vw;
+    margin-top: 5%;
+}
+hr{
+    margin-top: 5%;
+    border: 5px solid var(--border);
+    box-shadow: 0px 7.5px 20px 10px var(--primary-darker);
+}
+.textsub {
+    border: 1px solid var(--text);
+    box-shadow: none;
+    width: 0vw;
+    margin: 0%;
+    animation-name: subtext;
+    animation-duration: 2s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+}
+#data, #education, #tability, #pability{
+    border: 5px solid var(--border);
+    background-color: var(--primary);
+}
+#data {
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    grid-row: 1/4;
+}
+.datarigth{
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+}
+.datarigth h2{
+    font-size: 2vw;
+    margin: 0px;
+    color: var(--primary-darkest);
+    width: 100%;
+}
+.datarigth p {
+    font-size: 1vw;
+}
+#educationbox {
+    width: 100%;
+}
+.datacontainer{
+    gap: 1%;
+    margin: 0px auto;
+    padding: 7.5% 0%;
+    display: grid;
+    width: 80%;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 25vh 25vh 25vh;
+}
+.dataanimated{
+    animation-name: data;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+}
+.dataanimatedrigth{
+    animation-name: datarigth;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+}
+#redes {
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 5% auto;
+    border: 5px solid var(--border);
+    background-color: var(--primary);
+    width: 80%;
+    height: 30vh;
+}
+.redesanimated{
+    animation-name: redes;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+}
+.cicon {
+    padding: 1%;
+    margin: 0px 5%;
+    width: 10%;
+    border: 3px solid var(--text);
+    border-radius: 10px;
+    transition: all .5s;
+}
+.cicon:hover {
+    transform: translate(0px, -15px);
+}
+#datacontainer{
+    color: var(--text);
+}
+#data h2{
+    margin: 0%;
+    color: var(--primary-darkest);
+    font-size: 2vw;
+}
+#databorder pre{
+    margin-bottom: 0%;
+    font-size: 1vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#databorder{
+    height: 90%;
+    border-left: 5px solid var(--primary-darkest);
+    margin-left: 5%;
+    padding-left: 5%;
+}
+#databorder pre b{
+    line-height: 5vh;
+    text-decoration: underline var(--text);
+}
+.hicons{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5%;
+}
+.hicon{
+    width: 10%;
+    display: flex;
+    align-content: center;
+    flex-flow: column;
+}
+#tability h2{
+    margin-top: 25px;
+}
+.icon{
+    width: 100%;
+}
