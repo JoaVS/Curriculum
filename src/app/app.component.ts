@@ -59,4 +59,15 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
   title = 'Curriculum';
+  somethingtouched = false
+  moreinfo(index:number){
+    let div = (document.querySelectorAll(".moreinfodiv") as NodeListOf<HTMLDivElement>)
+    this.somethingtouched = true
+    div.forEach((e,i) => { div[i].style.height = "0px"; div[i].style.marginBottom = "0%"})
+    if(div[index].style.height == "0px"){
+      div[index].style.height = div[index].scrollHeight+"px"
+      div[index].style.marginBottom = "2%"
+      console.log(div[index].style.height)
+    }
+  }
 }

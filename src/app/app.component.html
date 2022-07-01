@@ -88,12 +88,81 @@
     <h2>Technical skills</h2>
   </ng-container>
     <div class="hicons">
-      <div id="html" class="hicon"><img src="assets/images/html5.svg"><p class="hicomtext">HTML5</p></div>
-      <div id="css" class="hicon"><img src="assets/images/css3.svg"><p class="hicomtext">CSS3</p></div>
-      <div id="js" class="hicon"><img src="assets/images/js.svg"><p class="hicomtext">JavaSC</p></div>
-      <div id="angular" class="hicon"><img src="assets/images/angular.svg"><p class="hicomtext">Angular</p></div>
-      <div id="github" class="hicon"><img src="assets/images/github0.svg"><p class="hicomtext">Git</p></div>
+      <div id="html" class="hicon" (click)="moreinfo(0)"><img src="assets/images/html5.svg"><p class="hicomtext">HTML5</p></div>
+      <div id="css" class="hicon" (click)="moreinfo(1)"><img src="assets/images/css3.svg"><p class="hicomtext">CSS3</p></div>
+      <div id="js" class="hicon" (click)="moreinfo(2)"><img src="assets/images/js.svg"><p class="hicomtext">JavaSC</p></div>
+      <div id="angular" class="hicon" (click)="moreinfo(3)"><img src="assets/images/angular.svg"><p class="hicomtext">Angular</p></div>
+      <div id="github" class="hicon" (click)="moreinfo(4)"><img src="assets/images/github0.svg"><p class="hicomtext">Git</p></div>
+      <div id="design" class="hicon" (click)="moreinfo(5)"><img src="assets/images/design.svg"><p class="hicomtext"><p *ngIf="language == 'spanish'" class="hicomtext">Diseño</p><p *ngIf="language == 'english'" class="hicomtext">Design</p></div>
     </div>
+    <ng-container *ngIf="language == 'spanish'">
+      <div class="moreinfo">
+      <p *ngIf="!somethingtouched">Toca un icono para más informacion...</p>
+        <div class="moreinfodiv">
+          <ul>
+            <p>No hay más informacion por ahora</p>
+          </ul>
+        </div>
+        <div class="moreinfodiv">
+          <div><p>Bootstrap</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Sass</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+        </div>
+        <div class="moreinfodiv">
+          <div><p>Typescript</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+        </div>
+        <div class="moreinfodiv">
+          <div><p>RxJs</p><div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Firebase</p><div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+        </div>
+        <div class="moreinfodiv">
+          <div><p>Github</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+        </div>
+        <div class="moreinfodiv">
+          <div><p>Dibujo Digital</p><div><div class="activeball"></div><div class="activeball"></div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Adobe XD</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Figma</p><div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Adobe Illustrator</p><div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Blender</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Diseño Gráfico</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Diseño UX</p><div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Diseño UI</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="language == 'english'">
+      <div class="moreinfo">
+      <p *ngIf="!somethingtouched">Touch an icon for more information...</p>
+        <div class="moreinfodiv">
+          <ul>
+            <p>There is not more information for now...</p>
+          </ul>
+        </div>
+        <div class="moreinfodiv">
+          <div><p>Bootstrap</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Sass</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+        </div>
+        <div class="moreinfodiv">
+          <div><p>Typescript</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+        </div>
+        <div class="moreinfodiv">
+          <div><p>RxJs</p><div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Firebase</p><div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+        </div>
+        <div class="moreinfodiv">
+          <div><p>Github</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+        </div>
+        <div class="moreinfodiv">
+          <div><p>Digital Drawing</p><div><div class="activeball"></div><div class="activeball"></div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Adobe XD</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Figma</p><div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Adobe Illustrator</p><div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Blender</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Graphic Design</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Ux Design</p><div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+          <div><p>Ui Design</p><div><div class="activeball"></div><div class="activeball"></div><div class="unactiveball"></div><div class="unactiveball"></div><div class="unactiveball"></div></div></div>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>
 <div id="pability" class="datarigth">
