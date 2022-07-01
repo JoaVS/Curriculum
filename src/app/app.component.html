@@ -1,11 +1,13 @@
-<div class="divnav"><nav><a href="#presentationcontainer" id="yolink"><p>Yo</p></a><a href="#datacontainer" id="datalink"><p>Información</p></a><a href="#redes" id="redeslink"><p>Redes</p></a></nav></div>
+<div id="language" [ngClass]="{'left': language == 'spanish', 'rigth': language == 'english'}"><div id="languageball" [ngClass]="{'languageballleft': language == 'spanish','languageballrigth': language == 'english'}" (click)="changelenguaje($event)"></div></div>
+<div class="divnav"><nav><a href="#presentationcontainer" id="yolink"><ng-container *ngIf="this.language == 'spanish'"><p>Yo</p></ng-container><ng-container *ngIf="this.language == 'english'"><p>About Me</p></ng-container></a><a href="#datacontainer" id="datalink"><ng-container *ngIf="this.language == 'spanish'"><p>Información</p></ng-container><ng-container *ngIf="this.language == 'english'"><p>Info</p></ng-container></a><a href="#redes" id="redeslink"><ng-container *ngIf="this.language == 'spanish'"><p>Más</p></ng-container><ng-container *ngIf="this.language == 'english'"><p>More</p></ng-container></a></nav></div>
 <div id="presentationcontainer">
 <div id="presentation">
   <div id="foto"></div>
   <div id="presentationtext">
     <h1>Joaquin Velazquez Sanchez</h1>
     <hr class="textsub">
-    <p>Soy un joven entusiasta nacido en Catamarca, Argentina. Soy estudiante de FrontEnd Development, con interes en aprender cada día más, tanto por mis propios medios e iniciativa como de las personas que ya conocen este rubro. Busco experiencia más allá de cualquier remuneración por lo que valoro la intruccion y el tutelaje más allá de cualquier cosa</p>
+    <ng-container *ngIf="language == 'spanish'"><p>Soy un joven entusiasta nacido en Catamarca, Argentina. Soy estudiante de FrontEnd Development, con interés en aprender cada día más, tanto por mis propios medios e iniciativa como de las personas que ya conocen este rubro. Busco experiencia más allá de cualquier remuneración por lo que valoro la instrucción y el tutelaje por sobre lo material</p></ng-container>
+    <ng-container *ngIf="language == 'english'"><p>I'm a young enthusiast born in Catamarca, Argentina. I'm a FrontEnd Develloper student, intereste on learning more every day, both my own means,initiative and from people who already know this field. I'm looking for experience beyond any remuneration, that's why I value the instruction and tutelage more than anything</p></ng-container>
   </div>
 </div>
 </div>
@@ -13,48 +15,90 @@
 <div class="datacontainer" id="datacontainer">
 <div id="data">
   <div id="databorder">
-  <h2>Datos personales</h2>
-  <pre>
-    <b>Edad</b> : 18
-    <b>DNI</b> : 45.385.136
-    <b>CUIL</b> : 20-45385136-3
-    <b>Fecha de nacimiento</b> : 18/03/2004
-  </pre>
-  <h2>Contacto</h2>
-  <pre>
-    <b>Dirección</b>
-    Alberto Pinetta 4165, Villa Parque Chacabuco,
-    San Fernando del Valle de Catamarca
-    C.P. 4700
-    <b>Celular</b>
-    3834252009
-    <b>Email</b>
-    joacojejox@gmail.com
-</pre>
+  <ng-container *ngIf="language == 'spanish'">
+    <h2>Datos personales</h2>
+    <p>
+      <b>Edad</b> : 18<br>
+      <b>DNI</b> : 45.385.136<br>
+      <b>CUIL</b> : 20-45385136-3<br>
+      <b>Fecha de nacimiento</b> : 18/03/2004<br>
+    </p>
+    <h2>Contacto</h2>
+    <p>
+      <b>Dirección</b><br>
+      Alberto Pinetta 4165, Villa Parque Chacabuco,
+      San Fernando del Valle de Catamarca
+      C.P. 4700<br>
+      <b>Celular</b><br>
+      3834252009<br>
+      <b>Email</b><br>
+      joacoder@gmail.com
+    </p>
+  </ng-container>
+  <ng-container *ngIf="language == 'english'">
+    <h2>Personal Info</h2>
+    <p>
+      <b>Age</b> : 18<br>
+      <b>DNI</b> : 45.385.136<br>
+      <b>CUIL</b> : 20-45385136-3<br>
+      <b>Date of Birth</b> : 18/03/2004<br>
+    </p>
+    <h2>Contact</h2>
+    <p>
+      <b>Address</b><br>
+      Alberto Pinetta 4165, Villa Parque Chacabuco,
+      San Fernando del Valle de Catamarca
+      C.P. 4700<br>
+      <b>Cellphone</b><br>
+      3834252009<br>
+      <b>Email</b><br>
+      joacoder@gmail.com
+    </p>
+  </ng-container>
 </div>
 </div>
 <div id="education" class="datarigth">
   <div id="educationbox">
-  <h2>Educación</h2>
-  <p>
-  Secundario (Completo) Escuela Pre-Universitaria Fray Mamerto Esquiú (2016- 2021)<br>
-  Inglés nivel elemental 4 en el laboratorio de idiomas de la UNCA. (70 horas reloj, 2020)<br>
-  Inglés nivel pre-intermedio 1 en el laboratorio de idiomas de la UNCA. (70 horas reloj, 2021)<br>
-  Inglés nivel pre-intermedio 2 en el laboratorio de idiomas de la UNCA. (70 horas reloj, 2021)<br>
-  </p>
+  <ng-container *ngIf="language == 'spanish'">
+    <h2>Educación</h2>
+    <div id="educationp">
+      <p>Secundario (Completo)<br> Escuela Pre-Universitaria Fray Mamerto Esquiú <br>(2016- 2021)</p><hr>
+      <p> Inglés nivel elemental 4<br> Laboratorio de idiomas de la UNCA. <br>(70 horas reloj, 2020)</p><hr>
+      <p> Inglés nivel pre-intermedio 1<br> Laboratorio de idiomas de la UNCA. <br>(70 horas reloj, 2021)</p><hr>
+      <p> Inglés nivel pre-intermedio 2<br> Laboratorio de idiomas de la UNCA. <br>(70 horas reloj, 2021)</p>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="language == 'english'">
+    <h2>Education</h2>
+    <div id="educationp">
+      <p>Secundario (Complete)<br> Escuela Pre-Universitaria Fray Mamerto Esquiú <br>(2016- 2021)</p><hr>
+      <p> Inglés nivel elemental 4<br> Laboratorio de idiomas de la UNCA. <br>(70 clock hours, 2020)</p><hr>
+      <p> Inglés nivel pre-intermedio 1<br> Laboratorio de idiomas de la UNCA. <br>(70 clock hours, 2021)</p><hr>
+      <p> Inglés nivel pre-intermedio 2<br> Laboratorio de idiomas de la UNCA. <br>(70 clock hours, 2021)</p>
+    </div>
+  </ng-container>
 </div>
 </div>
 <div id="tability" class="datarigth">
-  <h2>Habilidades tecnicas</h2>
-  <div class="hicons">
-  <div id="html" class="hicon"><img src="assets/images/html5.svg"><p>HTML5</p></div>
-  <div id="css" class="hicon"><img src="assets/images/css3.svg"><p>CSS3</p></div>
-  <div id="js" class="hicon"><img src="assets/images/js.svg"><p>JavaSC</p></div>
-  <div id="angular" class="hicon"><img src="assets/images/angular.svg"><p>Angular</p></div>
-  <div id="github" class="hicon"><img src="assets/images/github0.svg"><p>Git</p></div>
-</div>
+  <div id="tabilitycontent">
+  <ng-container *ngIf="language == 'spanish'">
+    <h2>Habilidades tecnicas</h2>
+  </ng-container>
+  <ng-container *ngIf="language == 'english'">
+    <h2>Technical skills</h2>
+  </ng-container>
+    <div class="hicons">
+      <div id="html" class="hicon"><img src="assets/images/html5.svg"><p class="hicomtext">HTML5</p></div>
+      <div id="css" class="hicon"><img src="assets/images/css3.svg"><p class="hicomtext">CSS3</p></div>
+      <div id="js" class="hicon"><img src="assets/images/js.svg"><p class="hicomtext">JavaSC</p></div>
+      <div id="angular" class="hicon"><img src="assets/images/angular.svg"><p class="hicomtext">Angular</p></div>
+      <div id="github" class="hicon"><img src="assets/images/github0.svg"><p class="hicomtext">Git</p></div>
+    </div>
+  </div>
 </div>
 <div id="pability" class="datarigth">
+<ng-container *ngIf="language == 'spanish'">
+  <div>
   <h2>Habilidades personales</h2>
   <p>
     Trabajo en equipo<br>
@@ -65,9 +109,45 @@
     Entusiasmo
   </p>
 </div>
+</ng-container>
+<ng-container *ngIf="language == 'english'">
+  <div>
+  <h2>Personal skills</h2>
+  <p>
+    Teamwork<br>
+    Creativity<br>
+    Resilience<br>
+    Innovative<br>
+    Empathy and communication<br>
+    Enthusiasm
+  </p>
+</div>
+</ng-container>
+</div>
 </div>
 <hr>
 <div id="redes">
-  <a class="cicon" href="https://www.instagram.com/lgsus204/" target="_blank"><img src="assets/images/instagram.svg" class="icon"></a>
-  <a class="cicon" href="https://github.com/JoaVS" target="_blank"><img src="assets/images/github.svg" class="icon"></a>
+  <div id="redesicon">
+    <a class="cicon" href="https://www.instagram.com/joacovsjs/" target="_blank"><img src="assets/images/instagram.svg" class="icon"></a>
+    <a class="cicon" href="https://github.com/JoaVS" target="_blank"><img src="assets/images/github.svg" class="icon"></a>
+    <a class="cicon" href="https://www.linkedin.com/in/joaquinvs/" target="_blank"><img src="assets/images/linkedin.svg" class="icon"></a>
+  </div>
+  <hr id="proyectshr">
+  <ng-container *ngIf="language == 'spanish'">
+    <div id="curriculumdiv"><a id="curriculum" href="assets/images/archives/CV - Joaquin Velazquez.pdf" download="Curriculum_joaquin_velazquez_sanchez">Curriculum</a></div>
+    <hr id="proyectshr">
+    <h2 id="proyects">Proyectos</h2>
+    <p>Proximamente...</p>
+  </ng-container>
+  <ng-container *ngIf="language == 'english'">
+    <div id="curriculumdiv"><a id="curriculum" href="assets/images/archives/CV - Joaquin Velazquez - English.pdf" download="Curriculum_joaquin_velazquez_sanchez_english">Curriculum</a></div>
+    <hr id="proyectshr">
+    <h2 id="proyects">Projects</h2>
+    <p>Coming Soon...</p>
+  </ng-container>
+  <div id="proyectcontainer">
+    <!-- <a href="" class="proyect"></a>
+    <a href="" class="proyect"></a>
+    <a href="" class="proyect"></a> -->
+  </div>
 </div>

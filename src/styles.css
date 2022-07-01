@@ -6,11 +6,12 @@
     --border: rgb(102,79,58);
     --text: rgb(243, 225, 213);
 }
+
 @keyframes subtext{
-    100% {width: 20vw;}
+    100% {width: 70%;}
 }
 @keyframes nav {
-    100%{width: 40vw; height: 7.5vh; border-radius: 50px;}
+    100%{width: 80vw; height: 7.5vh; border-radius: 50px;}
 }
 @keyframes text {
     100%{opacity: 1;}
@@ -32,17 +33,456 @@
 html {
     margin: 0px;
     min-height: 100vh;
-    width: 100%;
+    width: 100vw;
     height: auto;
     background-image: url(assets/images/fondo.png);
     background-size: cover;
-    background-position: fixed;
+    background-attachment: fixed;
     scroll-behavior: smooth;
     overflow-x: hidden;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 body {
     margin: 0px;
+}
+#language{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 15vw;
+    height: 6vw;
+    right: 2.5%;
+    bottom: 2.5%;
+    border: 5px solid var(--primary-darkest);
+    border-radius: 50px;
+    z-index: 11;
+    transition: all 1s;
+}
+#languageball{
+    position: absolute;
+    width: 45%;
+    height: 110%;
+    border: 5px solid var(--primary-darkest);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform .5s, margin-left .5s;
+}
+.languageballleft{
+    background: linear-gradient(red 0%, red 33%, yellow 33%, yellow 66%, red 66%, red 100%);
+    margin-right: 55%;
+}
+.languageballrigth{
+    background-image: url(assets/images/depositphotos_10307320-stock-photo-uk-flag.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-left: 55%;
+}
+.left{
+    background-color: rgb(125, 25, 25);
+}
+.rigth{
+    background-color: rgb(27, 25, 125);
+}
+nav {
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    max-width: 80%;
+    height: 50px;
+    box-shadow: 0px 0px 10px 5px white;
+    background-color: var(--primary);
+    border: 5px solid var(--border);
+    border-radius: 100px;
+    animation-delay: 1s;
+    animation-name: nav;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 25%;
+    margin: 0px 2.5%;
+    transition: background-color .5s;
+}
+nav a:hover {
+    background-color: var(--primary-darker);
+}
+nav a p{
+    opacity: 0;
+    animation-name: text;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    color: var(--text);
+    font-size: 1.5vh;
+    text-decoration: underline var(--text);
+}
+.divnav{
+    display: flex;
+    position: fixed;
+    top: 1.5vh;
+    justify-content: center;
+    width: 100vw;
+    z-index: 10;
+}
+#presentationcontainer {
+    padding-top: 12.5vh;
+}
+#presentation {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 85vh;
+    min-height: 400px;
+    background-color: var(--primary);
+    border: 5px solid var(--border);
+    border-radius: 10px;
+    animation-name: presentation;
+    animation-duration: 2.5s;
+    overflow: hidden;
+}
+#foto{
+    position: relative;
+    background-image: url(assets/images/483db616-0085-4ac7-a0be-26ea6ecf5d13.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 50%;
+    border-radius: 7.5px;
+}
+#foto:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0) 80%,rgb(177, 142, 120)) 20%;
+    z-index: 0;
+    opacity: 1;
+}
+#presentationtext{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+}
+#presentationtext h1,p{
+    text-align: center;
+    color: var(--text)
+}
+#presentationtext p{
+    width: 80%;
+    font-size: 80%;
+    padding: 0px 2.5%;
+    margin: auto 0%;
+}
+#presentationtext h1{
+    font-size: 100%;
+    margin-top: 5%;
+}
+hr{
+    margin-top: 5%;
+    background-color: var(--border);
+    border: 5px solid var(--border);
+    box-shadow: 0px 7.5px 20px 10px var(--primary-darker);
+}
+.textsub {
+    border: 1px solid var(--text);
+    box-shadow: none;
+    width: 0vw;
+    margin: 0%;
+    animation-name: subtext;
+    animation-duration: 2s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+}
+#data, #education, #tability, #pability{
+    border: 5px solid var(--border);
+    background-color: var(--primary);
+}
+#data {
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+}
+.datarigth{
+    visibility: hidden;
+    text-align: center;
+}
+.datarigth div h2{
+    font-size: 2vh;
+    margin: 1% 5px .25% 5px;
+    color: var(--primary-darkest);
+}
+.datarigth div p {
+    font-weight: bolder;
+    font-size: 1.25vh;
+    margin: 0px 5px 15px 5px;
+}
+.datarigth p br{
+    font-weight:normal;
+}
+.datacontainer{
+    gap: 1%;
+    margin: 0px auto;
+    padding: 25% 0%;
+    display: grid;
+    width: 80%;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto;
+}
+.dataanimated{
+    animation-name: data;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+}
+.dataanimatedrigth{
+    animation-name: datarigth;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+}
+#educationbox{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+#educationp p{
+   font-size: 1.25vh;
+   margin: 0%;
+}
+#educationp{
+    width: 95%;
+    margin: 5% 0%; 
+}
+#educationp hr{
+    margin: 2% 0%;
+    width: 95%;
+    border: 1px solid var(--primary-darkest);
+    box-shadow: none;
+    background-color: var(--primary-darkest);
+    margin-left: auto;
+    margin-right: auto;
+}
+#redes {
+    display: flex;
+    flex-flow: column nowrap;
+    opacity: 0;
+    justify-content: center;
+    margin: 5% auto;
+    border: 5px solid var(--border);
+    background-color: var(--primary);
+    width: 80%;
+    height: auto;
+    padding: 2% 0%;
+}
+#redesicon{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.redesanimated{
+    animation-name: redes;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+}
+#curriculumdiv{
+    display: flex;
+    justify-content: center;
+}
+#curriculum{
+    text-decoration: none;
+    color: var(--text);
+    font-size: 2.5vh;
+    transition: color  .5s;
+}
+#curriculum:hover{
+    color: var(--primary-darkest);
+}
+.cicon {
+    padding: 1%;
+    margin: 0px 5%;
+    width: 10%;
+    border: 3px solid var(--text);
+    border-radius: 10px;
+    transition: all .5s;
+}
+.cicon:hover {
+    transform: translate(0px, -15px);
+}
+#datacontainer{
+    color: var(--text);
+}
+#data h2{
+    margin: 1% 0% 2.5%;
+    color: var(--primary-darkest);
+    font-size: 2vh;
+}
+#databorder p{
+    text-align: left;
+    margin: 0%;
+    font-size: 1.25vh;
+    line-height: 150%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#databorder{
+    height: auto;
+    border-left: 5px solid var(--primary-darkest);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    padding-left: 5%;
+}
+#databorder p b{
+    text-decoration: underline var(--text);
+}
+.hicons{
+    width: 80%;
+    height: 70%;
+    margin: 0% auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.hicon{
+    width: 15%;
+    display: flex;
+    align-content: center;
+    flex-flow: column;
+}
+#tability{
+    display: flex;
+}
+#tabilitycontent{
+    width: 100%;
+    height: 100%;
+}
+#tabilitycontent h2{
+    margin: 0%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 20%;
+    font-size: 2vh;
+}
+#tabilitycontent div p{
+    font-size: 1vh;
+    font-weight: bolder;
+}
+.hicomtext{
+    margin: 1% 0% 0% 0%;
+}
+.hicon img{
+    width: 90%;
+    height: 80%;
+}
+.icon{
+    width: 100%;
+}
+#proyectcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    width: 100%;
+}
+.proyect{
+    margin: 1% 0px;
+    width: 80%;
+    height: 15vw;
+    background-color: red;
+}
+#proyects{
+    color: var(--text);
+    text-align: center;
+    font-size: 2vh;
+    margin: 0px;
+}
+#proyectshr{
+    border: 1.5px solid var(--text);
+    box-shadow: 0px 0px 0px 0px;
+    width: 80%;
+    margin: 2.5% auto;
+    background-color: var(--text);
+}
+                                                            /* Desktop */
+@media only screen and (min-width: 768px) {
+@keyframes subtext{
+    100% {width: 20vw;}
+}
+@keyframes nav {
+    100%{width: 40%; height: 7.5vh; border-radius: 50px;}
+}
+@keyframes text {
+    100%{opacity: 1;}
+}
+@keyframes presentation {
+    0%{transform: translate(-5000px, 0px);}
+}
+@keyframes data {
+    0%{transform: translate(-5000px, 0px); visibility: hidden;}
+    100%{transform: translate(0px, 0px); visibility: visible;}
+}
+@keyframes datarigth {
+    0%{transform: translate(5000px, 0px); visibility: hidden;}
+    100%{transform: translate(0px, 0px); visibility: visible;}
+}
+@keyframes redes {
+    100%{opacity: 1;}
+}
+#language{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 7.5vw;
+    height: 3vw;
+    left: 2.5%;
+    top: 2.5%;
+    border: 5px solid var(--primary-darkest);
+    border-radius: 50px;
+    z-index: 11;
+    transition: all 1s;
+}
+#languageball{
+    position: absolute;
+    width: 45%;
+    height: 110%;
+    border: 5px solid var(--primary-darkest);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform .5s, margin-left .5s;
+}
+#languageball:hover{
+   transform: scale(1.15);
+   box-shadow: 0px 0px 5px 10px rgba(255, 255, 255, 0.25);
+}
+.languageballleft{
+    background: linear-gradient(red 0%, red 33%, yellow 33%, yellow 66%, red 66%, red 100%);
+}
+.languageballrigth{
+    background-image: url(assets/images/depositphotos_10307320-stock-photo-uk-flag.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-left: 55%;
+}
+.left{
+    background-color: rgb(125, 25, 25);
+}
+.rigth{
+    background-color: rgb(27, 25, 125);
 }
 nav {
     display: flex;
@@ -80,7 +520,7 @@ nav a p{
     animation-delay: 2s;
     color: var(--text);
     font-size: 1.5vw;
-    text-decoration: underline white;
+    text-decoration: underline var(--text);
 }
 .divnav{
     display: flex;
@@ -108,7 +548,7 @@ nav a p{
 }
 #foto{
     position: relative;
-    background-image: url(assets/images/IMG_20210505_145456.jpg);
+    background-image: url(assets/images/483db616-0085-4ac7-a0be-26ea6ecf5d13.jpg);
     background-size: cover;
     background-position: center;
     width: 45%;
@@ -130,6 +570,7 @@ nav a p{
     display: flex;
     flex-flow: column;
     align-items: center;
+    justify-content: baseline;
     position: absolute;
     right: 0;
     top:0;
@@ -144,7 +585,6 @@ nav a p{
     width: 80%;
     font-size: 1.5vw;
     padding: 0px 2.5%;
-    margin-top: 20%;
 }
 #presentationtext h1{
     font-size: 1.5vw;
@@ -152,6 +592,7 @@ nav a p{
 }
 hr{
     margin-top: 5%;
+    background-color: var(--border);
     border: 5px solid var(--border);
     box-shadow: 0px 7.5px 20px 10px var(--primary-darker);
 }
@@ -183,18 +624,39 @@ hr{
     flex-flow: column;
     text-align: center;
 }
-.datarigth h2{
+.datarigth div h2{
     font-size: 2vw;
     margin: 0px;
     color: var(--primary-darkest);
     width: 100%;
 }
-.datarigth p {
+.datarigth div p {
     font-size: 1vw;
 }
 #educationbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 100%;
 }
+#educationp p{
+    font-size: 1.25vw;
+    margin: 0%;
+ }
+ #educationp{
+    width: 95%;
+    margin: 5% 0%; 
+ }
+ #educationp hr{
+    margin: 2% 0%;
+    width: 95%;
+    border: 1px solid var(--primary-darkest);
+    box-shadow: none;
+    background-color: var(--primary-darkest);
+    margin-left: auto;
+    margin-right: auto;
+ }
 .datacontainer{
     gap: 1%;
     margin: 0px auto;
@@ -202,7 +664,7 @@ hr{
     display: grid;
     width: 80%;
     grid-template-columns: 40% 60%;
-    grid-template-rows: 25vh 25vh 25vh;
+    grid-template-rows: auto auto auto;
 }
 .dataanimated{
     animation-name: data;
@@ -216,14 +678,33 @@ hr{
 }
 #redes {
     display: flex;
+    flex-flow: column nowrap;
     opacity: 0;
     justify-content: center;
-    align-items: center;
     margin: 5% auto;
     border: 5px solid var(--border);
     background-color: var(--primary);
     width: 80%;
-    height: 30vh;
+    padding: 2% 0%;
+    height: auto;
+}
+#curriculumdiv{
+    display: flex;
+    justify-content: center;
+}
+#curriculum{
+    text-decoration: none;
+    color: var(--text);
+    font-size: 2.5vw;
+    transition: color  .5s;
+}
+#curriculum:hover{
+    color: var(--primary-darkest);
+}
+#redesicon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .redesanimated{
     animation-name: redes;
@@ -234,7 +715,7 @@ hr{
     padding: 1%;
     margin: 0px 5%;
     width: 10%;
-    border: 3px solid var(--text);
+    border: 10px solid var(--text);
     border-radius: 10px;
     transition: all .5s;
 }
@@ -245,40 +726,80 @@ hr{
     color: var(--text);
 }
 #data h2{
-    margin: 0%;
+    margin:  5% 0%;
     color: var(--primary-darkest);
     font-size: 2vw;
 }
-#databorder pre{
+#databorder p{
     margin-bottom: 0%;
+    line-height: 250%;
     font-size: 1vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #databorder{
-    height: 90%;
+    height: auto;
     border-left: 5px solid var(--primary-darkest);
     margin-left: 5%;
     padding-left: 5%;
 }
-#databorder pre b{
-    line-height: 5vh;
+#databorder p b{
+    line-height: 2vh;
     text-decoration: underline var(--text);
 }
 .hicons{
     width: 80%;
+    height: 70%;
     display: flex;
     justify-content: space-between;
-    margin-top: 2.5%;
 }
 .hicon{
-    width: 10%;
+    width: 15vw;
+    height: 100%;
+    margin: 2.5%;
     display: flex;
     align-content: center;
     flex-flow: column;
 }
+.hicon img{
+    width: 100%;
+    height: 75%;
+}
 #tability h2{
     margin-top: 25px;
 }
+#tability div p{
+    font-size: 1vw;
+    font-weight: bolder;
+}
+#tability div h2{
+    margin: 1% 0% 0% 0%;
+    font-size: 2vw;
+    font-weight: bolder;
+}
 .icon{
     width: 100%;
+}
+.hicomtext{
+    height: 20%;
+    margin: 0% 0% 0% 0%;
+}
+#proyectcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    width: 100%;
+}
+#proyects{
+    color: var(--text);
+    text-align: center;
+    font-size: 2vw;
+}
+#proyectshr{
+    border: 5px solid var(--text);
+    box-shadow: 0px 0px 0px 0px;
+    width: 80%;
+    margin: 2.5% auto;
+    background-color: var(--text);
+}
 }
